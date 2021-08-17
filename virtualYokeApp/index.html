@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="contAll">
+      <h1 class="title">Virtual Yoke</h1>
+      <div class="yokeCont">
+        <img src="media/yoke.png" class="yoke"/>
+      </div>
+      <div class="throttleCont">
+        <div class="middleLine"></div>
+        <div class="topMargin throttleMargin"></div>
+        <div class="bottomMargin throttleMargin"></div>
+        <div class="throttleLever"></div>
+      </div>
+      <div class="rudderCont">
+        <div class="rudderPedal left">
+          <div class="pedalRow">
+            <div class="pedalHole"></div>
+            <div class="pedalHole"></div>
+          </div>
+          <div class="pedalRow">
+            <div class="pedalHole"></div>
+            <div class="pedalHole"></div>
+          </div>
+          <div class="pedalRow">
+            <div class="pedalHole"></div>
+            <div class="pedalHole"></div>
+          </div>
+        </div>
+        <div class="rudderPedal right">
+          <div class="pedalRow">
+            <div class="pedalHole"></div>
+            <div class="pedalHole"></div>
+          </div>
+          <div class="pedalRow">
+            <div class="pedalHole"></div>
+            <div class="pedalHole"></div>
+          </div>
+          <div class="pedalRow">
+            <div class="pedalHole"></div>
+            <div class="pedalHole"></div>
+          </div>
+        </div>
+      </div>
+      <div class="alertCont">
+        <div class="simConnected">
+          <h1 class="simName greenText">Connected to X-Plane 11</h1>
+          <h1 class="simName redText simErrText"></h1>
+          <button class="pathErr btn" onclick="setSimPath()">Set Path</button>
+          <button class="pluginErr btn" onclick="installPlugin()">Install Plugin</button>
+        </div>
+        <div class="deviceConnected">
+          <h1 class="deviceName greenText">Connected to device</h1>
+          <canvas id="qr-code" class="qrcode"></canvas>
+          <p class="disInfo">User disabled connection</p>
+        </div>
+      </div>
+      <div class="instructionImgCont">
+        <img src="media/connInstructions.png" alt="" class="instructionImg">
+        <h3 class="learnMore" onclick="enterExplanation()">Learn More</h3>
+      </div>
+      <div class="learnMoreCont">
+        <h1 class="learnMoreTitle">Why do I get this warning?</h1>
+        <h3 class="learnMoreSubtitle">TL;DR</h3>
+        <h4 class="learnMoreTxt">This program uses your computer as a server to get your live data from your phone, and to get it in a secure way, a self signed certificate is used. Browsers are made to warn about this, but because the server is run on your computer, no risk is posed for you</h3>
+        <h3 class="learnMoreSubtitle">Detailed Explanation</h3>
+        <h4 class="learnMoreTxt">
+          To get live data from your phone to your computer, this program opens an HTTPS server and communicates with the phone with websockets - a technology used to send data in real-time between a device and a server. In this case, your device is the client, while your computer opens a local server. HTTPS stands for Hypertext Transfer Protocol Secure, that is a protocol used to transfer data in text form between devices on the internet. To achieve the secure status (HTTPS vs HTTPS), a server needs a certificate, which validates the security of the server. Because this program opens a local server on your computer, a new self signed certificate is issued every time the app is opened, thus triggering a warning in your browser. Because the server is on your computer and does not communicate with any other server, your data is safe.
+        </h4>
+        <h1 class="ex" onclick="exitExplanation()">X</h1>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <script type="text/javascript" src="script.js" defer></script>
+  </body>
+</html>

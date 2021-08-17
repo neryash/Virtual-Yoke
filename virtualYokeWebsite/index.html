@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="contAll">
+      <h1 class="pageTitle">Virtual Yoke</h1>
+      <p class="rudderTitle">Rudder</p>
+      <p class="throttleTitle">Throttle</p>
+      <div class="disconnect" onclick="toggleConnection()">
+        <h3>Disconnect</h3>
+      </div>
+      <img src="enterFull.png" alt="" class="fullscreenToggle" onclick="toggleFull()">
+      <input type="range" min="0" max="100" value="50" class="throttleSlider slider"/>
+      <input type="range" min="0" max="200" value="100" class="rudderSlider slider"/>
+      <button class="resetRudder" onclick="resetRudder()">Reset Rudder</button>
+    </div>
+    <script src="https://cdn.socket.io/4.0.1/socket.io.min.js" integrity="sha384-LzhRnpGmQP+lOvWruF/lgkcqD+WDVt9fU3H4BWmwP5u5LTmkUGafMcpZKNObVMLU" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>

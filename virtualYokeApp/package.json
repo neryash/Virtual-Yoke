@@ -1,0 +1,23 @@
+{
+  "name": "virtualyoke",
+  "version": "1.0.0",
+  "description": "An app that utilises your phone to act as a yoke for X-Plane 11",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "build": "electron-packager --out winx64 --overwrite --platform win32 --appname VirtualYoke . --icon yoke.ico"
+  },
+  "author": "Nerya Sheetrit",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^12.0.5",
+    "https-localhost": "^4.6.4",
+    "internal-ip": "^6.2.0",
+    "ip": "^1.1.5",
+    "make-cert": "^1.2.0",
+    "process-list": "^2.0.0",
+    "ps-list": "^7.2.0",
+    "socket.io": "^4.1.1"
+  }
+}
